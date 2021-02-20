@@ -1,0 +1,219 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scene/botonPizza.tscn" type="PackedScene" id=1]
+[ext_resource path="res://script/contenedor.gd" type="Script" id=2]
+[ext_resource path="res://assets/themeUI/MenuPrincipal.tres" type="Theme" id=3]
+
+[node name="Tomar pedido" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 1.25995
+margin_top = -1.25995
+margin_right = 501.26
+margin_bottom = 598.74
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mesas" type="Label" parent="Panel"]
+margin_left = 25.0
+margin_top = 56.572
+margin_right = 106.0
+margin_bottom = 87.572
+text = "Mesa"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionButton" type="OptionButton" parent="Panel"]
+margin_left = 25.0
+margin_top = 90.6909
+margin_right = 171.0
+margin_bottom = 122.691
+text = "Mesa"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+anchor_bottom = 0.389
+margin_left = 25.0
+margin_top = 128.0
+margin_right = 475.0
+margin_bottom = 226.6
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pizza" parent="Panel/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 215.0
+margin_bottom = 97.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+price = 5000
+nombre = "Pizza core"
+
+[node name="Pizza2" parent="Panel/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 235.0
+margin_right = 450.0
+margin_bottom = 97.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+nombre = "teriyaki"
+
+[node name="Pizza3" parent="Panel/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 117.0
+margin_right = 215.0
+margin_bottom = 214.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+price = 2000
+nombre = "Vegetariana"
+
+[node name="Pizza4" parent="Panel/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 235.0
+margin_top = 117.0
+margin_right = 450.0
+margin_bottom = 214.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+price = 3000
+nombre = "Hawaiana"
+
+[node name="Pizza5" parent="Panel/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 234.0
+margin_right = 215.0
+margin_bottom = 331.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+price = 4000
+nombre = "Carnes"
+
+[node name="Pizza6" parent="Panel/GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 235.0
+margin_top = 234.0
+margin_right = 450.0
+margin_bottom = 331.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+price = 6000
+nombre = "Camarones"
+
+[node name="Mesa" type="Label" parent="."]
+margin_left = 354.0
+margin_top = 41.0
+margin_right = 426.0
+margin_bottom = 73.0
+theme = ExtResource( 3 )
+text = "ninguna"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mesa2" type="Label" parent="."]
+margin_left = 273.321
+margin_top = 41.0
+margin_right = 342.321
+margin_bottom = 73.0
+theme = ExtResource( 3 )
+text = "Mesa: "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Total2" type="Label" parent="."]
+margin_left = 262.26
+margin_top = 74.312
+margin_right = 350.26
+margin_bottom = 106.312
+theme = ExtResource( 3 )
+text = "Total:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Total" type="Label" parent="."]
+margin_left = 350.26
+margin_top = 74.312
+margin_right = 414.26
+margin_bottom = 106.312
+theme = ExtResource( 3 )
+text = "Total:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regresar" type="Button" parent="."]
+margin_left = 26.2599
+margin_top = 493.0
+margin_right = 126.26
+margin_bottom = 543.0
+theme = ExtResource( 3 )
+text = "Regresar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Registrar" type="Button" parent="."]
+margin_left = 377.0
+margin_top = 493.0
+margin_right = 477.0
+margin_bottom = 543.0
+theme = ExtResource( 3 )
+text = "Registrar"
+
+[node name="ConfirmarRegistro" type="ConfirmationDialog" parent="."]
+visible = true
+margin_left = 116.0
+margin_top = 230.0
+margin_right = 377.0
+margin_bottom = 345.0
+theme = ExtResource( 3 )
+window_title = "Por favor, Confirma..."
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ConfirmarRegistro"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 253.0
+margin_bottom = 79.0
+text = "Total de la compra: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="item_selected" from="Panel/OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="pressed" from="Regresar" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Registrar" to="." method="_on_Registrar_pressed"]
+[connection signal="confirmed" from="ConfirmarRegistro" to="." method="_on_ConfirmarRegistro_confirmed"]

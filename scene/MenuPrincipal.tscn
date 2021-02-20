@@ -1,0 +1,127 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scene/contenedor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://script/MenuPrincipal.gd" type="Script" id=2]
+[ext_resource path="res://assets/minemize.png" type="Texture" id=3]
+[ext_resource path="res://assets/icon-close.png" type="Texture" id=4]
+[ext_resource path="res://assets/themeUI/MenuPrincipal.tres" type="Theme" id=5]
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/font/Super Comic.otf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 100
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/font/Super Comic.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+font_data = SubResource( 1 )
+
+[node name="Intefaz" type="Control"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 500.0
+margin_bottom = 600.0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TomarPedido" type="Button" parent="Panel"]
+margin_left = 184.0
+margin_top = 296.0
+margin_right = 325.0
+margin_bottom = 340.0
+text = "Tomar pedido"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Registro" type="Button" parent="Panel"]
+margin_left = 184.0
+margin_top = 424.0
+margin_right = 325.0
+margin_bottom = 468.0
+text = "Registro"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 114.093
+margin_top = 53.7289
+margin_right = 397.093
+margin_bottom = 266.729
+custom_fonts/font = SubResource( 4 )
+text = "Pizza
+Core"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tomar pedido" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 500.0
+margin_bottom = 20.0
+color = Color( 0.101961, 0.0627451, 0.054902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_right = 500.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 2 )
+text = "Pizza Core"
+align = 1
+valign = 1
+
+[node name="TitleBar" type="Control" parent="."]
+margin_right = 501.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cerrar" type="Button" parent="."]
+margin_left = 476.44
+margin_top = 3.26119
+margin_right = 552.44
+margin_bottom = 73.2612
+rect_scale = Vector2( 0.2, 0.2 )
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 4 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Minimizar" type="Button" parent="."]
+margin_left = 455.325
+margin_top = 3.26119
+margin_right = 531.325
+margin_bottom = 73.2612
+rect_scale = Vector2( 0.2, 0.2 )
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Panel/TomarPedido" to="." method="_on_TomarPedido_pressed"]
+[connection signal="gui_input" from="TitleBar" to="." method="_on_TitleBar_gui_input"]
+[connection signal="pressed" from="Cerrar" to="." method="_on_Cerrar_pressed"]
+[connection signal="pressed" from="Minimizar" to="." method="_on_Minimizar_pressed"]
